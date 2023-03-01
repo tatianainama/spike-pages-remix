@@ -1,4 +1,7 @@
-import type { MetaFunction } from "@remix-run/cloudflare";
+import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
+import styles from '@looma/core/dist/style.css';
+import { LoomaProvider } from '@looma/core';
+import { cssBundleHref } from '@remix-run/css-bundle';
 import {
   Links,
   LiveReload,
@@ -6,13 +9,21 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'New Remix App',
+  viewport: 'width=device-width,initial-scale=1',
 });
+
+export const links: LinksFunction = () => [
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  {
+    rel: 'stylesheet',
+    href: styles,
+  },
+];
 
 export default function App() {
   return (
@@ -22,10 +33,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <LoomaProvider theme="light">
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </LoomaProvider>
       </body>
     </html>
   );
