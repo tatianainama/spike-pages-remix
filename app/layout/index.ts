@@ -1,1 +1,1 @@
-export { Footer, Header, Layout, Main, Sidebar } from './_index';
+export { Footer, Header, Layout, Main, Sidebar } from './Layout';

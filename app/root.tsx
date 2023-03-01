@@ -1,6 +1,7 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
-import styles from '@looma/core/dist/style.css';
+import lumosStyles from '@looma/core/dist/style.css';
 import { cssBundleHref } from '@remix-run/css-bundle';
+import globalStyles from '~/styles/global.css';
 
 import {
   Links,
@@ -22,7 +23,11 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   {
     rel: 'stylesheet',
-    href: styles,
+    href: lumosStyles,
+  },
+  {
+    rel: 'stylesheet',
+    href: globalStyles,
   },
 ];
 

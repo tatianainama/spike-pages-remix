@@ -1,22 +1,22 @@
 import type { FC, PropsWithChildren } from 'react';
-import * as styles from './styles.css';
+import * as styles from './Layout.css';
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => (
-  <div className={styles.layoutStyle}>{children}</div>
+  <div className={styles.root}>{children}</div>
 );
 
 export const Header: FC<PropsWithChildren> = ({ children }) => (
-  <header className={styles.headerStyle}>{children}</header>
+  <header className={styles.header}>{children}</header>
 );
 
 export const Sidebar: FC<PropsWithChildren> = ({ children }) => (
-  <aside className={styles.sidebarStyle}>{children}</aside>
+  <aside className={styles.sidebar}>{children}</aside>
 );
 
 export const Footer: FC<PropsWithChildren> = ({ children }) => (
-  <aside className={styles.footerStyle}>{children}</aside>
+  <aside className={styles.footer}>{children}</aside>
 );
 
 export const Main: FC<PropsWithChildren> = ({ children }) => (
-  <aside className={styles.mainStyle}>{children}</aside>
+  <aside className={styles.main}>{children}</aside>
 );
