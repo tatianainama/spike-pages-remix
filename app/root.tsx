@@ -10,6 +10,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { LoomaProvider } from '@looma/core';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -33,10 +34,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <LoomaProvider theme="light">
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </LoomaProvider>
       </body>
     </html>
   );
