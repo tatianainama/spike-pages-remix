@@ -1,4 +1,6 @@
-import { Footer, Header, Layout, Main, Sidebar } from '~/layouts';
+import { Button } from '@looma/core';
+import { Card } from '~/components/Card';
+import { Footer, Header, Layout, Main, Sidebar } from '~/layout';
 
 export default function Index() {
   return (
@@ -34,6 +36,8 @@ export default function Index() {
         <h1>Welcome to Remix</h1>
       </Header>
       <Main>
+        <Button variant="primary">Buttonn</Button>
+        <Card />
         <div>content!</div>
       </Main>
       <Footer>

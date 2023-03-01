@@ -1,7 +1,7 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
 import styles from '@looma/core/dist/style.css';
-import { LoomaProvider } from '@looma/core';
 import { cssBundleHref } from '@remix-run/css-bundle';
+
 import {
   Links,
   LiveReload,
@@ -33,12 +33,10 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <LoomaProvider theme="light">
-          <Outlet />
-          <ScrollRestoration />
-          <Scripts />
-          <LiveReload />
-        </LoomaProvider>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
